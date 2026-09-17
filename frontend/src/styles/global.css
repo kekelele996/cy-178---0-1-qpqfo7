@@ -494,6 +494,128 @@ input, textarea {
   border-color: var(--line);
 }
 
+.badge.open {
+  background: #eef6e8;
+  color: #4a7c3a;
+  border-color: #b8d4a8;
+}
+
+.badge.closed,
+.badge.reply-closed {
+  background: #f1ece1;
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+.badge.mine {
+  background: #fff3ee;
+  color: var(--accent);
+  border-color: var(--accent-soft);
+  margin-left: 6px;
+}
+
+.badge.reply-accepted {
+  background: #fff3ee;
+  color: var(--accent);
+  border-color: var(--accent-soft);
+}
+
+.badge.reply-pending {
+  background: #fdf6e3;
+  color: #8a6d1d;
+  border-color: #e3d3a1;
+}
+
+.echo-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.echo-title {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.echo-sub {
+  color: var(--ink-soft);
+  font-size: 13px;
+  margin: 0;
+  max-width: 520px;
+}
+
+.echo-request {
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+  background: #fffdf6;
+}
+
+.echo-content {
+  white-space: pre-wrap;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.echo-section-title {
+  font-size: 15px;
+  margin: 0 0 12px;
+}
+
+.echo-reply-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.echo-reply-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.echo-reply-card.accepted {
+  border-color: var(--accent-soft);
+  background: #fff8f4;
+}
+
+.echo-reply-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.echo-hint {
+  color: var(--muted);
+  font-size: 13px;
+  padding: 12px 0;
+}
+
+.deadline-input {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  outline: none;
+  font-family: inherit;
+  color: var(--ink);
+}
+
+.deadline-input:focus {
+  border-color: var(--accent);
+}
+
 .loading {
   text-align: center;
   color: var(--muted);

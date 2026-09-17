@@ -4,6 +4,7 @@ const { PORTS, ROUTES } = require('./config/constants');
 const authRoutes = require('./routes/authRoutes');
 const letterRoutes = require('./routes/letterRoutes');
 const inboxRoutes = require('./routes/inboxRoutes');
+const echoRoutes = require('./routes/echoRoutes');
 const { startDatabasePlaceholder } = require('./data/dbPort');
 
 require('./data/database');
@@ -17,6 +18,7 @@ app.get('/health', (_req, res) => res.json({ ok: true }));
 app.use(ROUTES.AUTH, authRoutes);
 app.use(ROUTES.LETTERS, letterRoutes);
 app.use(ROUTES.INBOX, inboxRoutes);
+app.use(ROUTES.ECHO, echoRoutes);
 
 app.use((err, _req, res, _next) => {
   console.error(err);

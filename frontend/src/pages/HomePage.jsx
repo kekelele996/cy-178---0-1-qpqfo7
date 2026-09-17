@@ -18,6 +18,9 @@ export default function HomePage() {
         <button className="secondary-btn" onClick={() => navigate(ROUTES.INBOX)}>
           去看看我的信箱
         </button>
+        <button className="secondary-btn" onClick={() => navigate(ROUTES.ECHO)}>
+          逛逛{LABELS.ECHO_WALL}
+        </button>
       </div>
     </div>
   );

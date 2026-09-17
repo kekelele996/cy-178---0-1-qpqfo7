@@ -7,6 +7,9 @@ import HomePage from './pages/HomePage.jsx';
 import ComposePage from './pages/ComposePage.jsx';
 import InboxPage from './pages/InboxPage.jsx';
 import ThreadPage from './pages/ThreadPage.jsx';
+import EchoWallPage from './pages/EchoWallPage.jsx';
+import EchoComposePage from './pages/EchoComposePage.jsx';
+import EchoDetailPage from './pages/EchoDetailPage.jsx';
 import './styles/global.css';
 
 function AppShell({ children }) {
@@ -38,6 +41,9 @@ function AppShell({ children }) {
           </button>
           <button className="nav-btn" onClick={() => navigate(ROUTES.INBOX)}>
             📭 {LABELS.MY_INBOX}
+          </button>
+          <button className="nav-btn" onClick={() => navigate(ROUTES.ECHO)}>
+            🕊 {LABELS.ECHO_WALL}
           </button>
           {penName && (
             <>
@@ -96,6 +102,30 @@ export default function App() {
         element={
           <RequireAuth>
             <ThreadPage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path={ROUTES.ECHO}
+        element={
+          <RequireAuth>
+            <EchoWallPage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path={ROUTES.ECHO_NEW}
+        element={
+          <RequireAuth>
+            <EchoComposePage />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path={ROUTES.ECHO_DETAIL}
+        element={
+          <RequireAuth>
+            <EchoDetailPage />
           </RequireAuth>
         }
       />
