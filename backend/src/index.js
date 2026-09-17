@@ -4,6 +4,8 @@ const { PORTS, ROUTES } = require('./config/constants');
 const authRoutes = require('./routes/authRoutes');
 const letterRoutes = require('./routes/letterRoutes');
 const inboxRoutes = require('./routes/inboxRoutes');
+const echoWallRoutes = require('./routes/echoWallRoutes');
+const EchoWallModel = require('./models/echoWallModel');
 const { startDatabasePlaceholder } = require('./data/dbPort');
 
 require('./data/database');
@@ -17,6 +19,7 @@ app.get('/health', (_req, res) => res.json({ ok: true }));
 app.use(ROUTES.AUTH, authRoutes);
 app.use(ROUTES.LETTERS, letterRoutes);
 app.use(ROUTES.INBOX, inboxRoutes);
+app.use(ROUTES.ECHO_WALL, echoWallRoutes);
 
 app.use((err, _req, res, _next) => {
   console.error(err);
@@ -28,3 +31,11 @@ startDatabasePlaceholder();
 app.listen(PORTS.BACKEND, '0.0.0.0', () => {
   console.log(`[backend] listening on 0.0.0.0:${PORTS.BACKEND}`);
 });
+
+setInterval(() => {
+  try {
+    EchoWallModel.closeExpired(Date.now());
+  } catch (err) {
+    console.error('[backend] failed to close expired echo requests', err);
+  }
+}, 30000).unref();

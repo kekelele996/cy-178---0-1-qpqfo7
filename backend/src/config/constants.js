@@ -18,7 +18,8 @@ module.exports = {
   ROUTES: {
     AUTH: '/api/auth',
     LETTERS: '/api/letters',
-    INBOX: '/api/inbox'
+    INBOX: '/api/inbox',
+    ECHO_WALL: '/api/echo-wall'
   },
 
   LETTER_STATUS: {
@@ -26,6 +27,17 @@ module.exports = {
     DELIVERED: 'delivered',
     SKIPPED: 'skipped',
     REPLIED: 'replied'
+  },
+
+  ECHO_STATUS: {
+    OPEN: 'open',
+    ACCEPTED: 'accepted',
+    EXPIRED: 'expired'
+  },
+
+  ECHO_CLOSED_REASON: {
+    ACCEPTED: 'accepted',
+    EXPIRED: 'expired'
   },
 
   ROLES: {
@@ -51,6 +63,19 @@ module.exports = {
     FAVORITED: '已收藏',
     UNFAVORITED: '已取消收藏',
     SKIPPED: '已跳过这封信',
-    REPLIED: '回复已送达'
+    REPLIED: '回复已送达',
+    ECHO_NOT_FOUND: '求助信不存在',
+    ECHO_CLOSED: '这封求助信已关闭',
+    ECHO_DEADLINE_REQUIRED: '请选择回复截止时间',
+    ECHO_DEADLINE_PAST: '回复截止时间必须晚于当前时间',
+    CANNOT_REPLY_OWN_ECHO: '不能回复自己的求助',
+    ECHO_ALREADY_REPLIED: '你已经回复过这封求助信',
+    NOT_YOUR_ECHO_REPLY: '这不是你的回音',
+    ECHO_REPLY_NOT_FOUND: '回音不存在',
+    ECHO_CREATED: '求助信已贴上回音墙',
+    ECHO_REPLY_ACCEPTED: '已采纳这条回音',
+    ECHO_REPLY_SAVED: '回音已提交',
+    ECHO_REPLY_UPDATED: '回音已更新',
+    ECHO_REPLY_CANNOT_EDIT: '关闭后的回音不能修改'
   }
 };

@@ -15,6 +15,9 @@ export default function HomePage() {
         {LABELS.COMPOSE}
       </button>
       <div className="home-actions">
+        <button className="secondary-btn" onClick={() => navigate(ROUTES.ECHO_WALL)}>
+          {LABELS.ECHO_WALL}
+        </button>
         <button className="secondary-btn" onClick={() => navigate(ROUTES.INBOX)}>
           去看看我的信箱
         </button>
